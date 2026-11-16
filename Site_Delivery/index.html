@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>OISHI</title>
+</head>
+
+<body>
+    <header class="cabecalho">
+        <img src="assets/logo.png" alt="">
+        <ul>
+            <li onclick="rolarPara('inicio')" class="menu">Início</li>
+            <li onclick="rolarPara('cardapio')" class="menu">Cardápio</li>
+            <li onclick="rolarPara('sobre')" class="menu">Sobre</li>
+            <li onclick="rolarPara('login')" class="menu">Login</li>
+            <li onclick="rolarPara('perfil')" class="menu">Perfil</li>
+            <li onclick="rolarPara('pedidos')" class="menu">Pedidos</li>
+        </ul>
+        <div>
+            <button type="button" id="btnBusca" onclick="alternarBusca()" aria-label="Buscar no cardápio">
+                <img src="assets/icone-lupa.png" alt="">
+            </button>
+            <input type="search" id="campoBusca" placeholder="Buscar no cardápio..." maxlength="100" hidden aria-label="Buscar produtos">
+            <button onclick="rolarPara('carrinho')" id="btnCarrinho"><img src="assets/icone-carrinho.png"
+                    alt=""></button>
+            <button onclick="alternarModo()" id="btnTema">
+                <img id="iconeTema" src="assets/icone-sol.png" alt="Modo de exibição" width="30">
+            </button>
+        </div>
+    </header>
+    <p id="mensagem" role="status" hidden></p>
+    <section id="inicio" class="secao-inicio">
+        <div>
+            <h4 id="chamadaInicio">sushi é sempre uma boa ideia</h4>
+            <h1>Sabor e tradição <br>no seu momento</h1>
+            <h4>Sushi fresquinho, feito com ingredientes selecionados <br>e muito carinho.
+                Peça agora e aproveite o melhor da <br>culinária japonesa, sem sair de casa.</h4>
+            <button onclick="rolarPara('cardapio')">Peça agora</button>
+        </div>
+    </section>
+    <div class="titulo-secao">
+        <h2>Cardápio</h2>
+    </div>
+    <section id="cardapio" class="secao-cardapio">
+        <div class="lista-produtos" aria-live="polite"><p>Carregando cardápio...</p></div>
+    </section>
+    <div class="titulo-secao">
+        <h2>Sobre Nós</h2>
+    </div>
+    <section id="sobre" class="secao-sobre">
+        <div class="bloco-sobre">
+            <div>
+                <h4 class="texto-sobre">
+                    Somos apaixonados pela culinária japonesa e
+                    acreditamos que <br>cada refeição deve ser uma experiência especial!
+                    Nosso objetivo <br>é levar até você o melhor da gastronomia
+                    oriental, com ingredientes <br>frescos, qualidade e muito carinho em cada preparo!
+                </h4>
+                <br>
+                <h4 class="texto-sobre">Trabalhamos para oferecer uma grande variedade de sushis, combinando
+                    <br>sabores, tradição e
+                    criatividade
+                    para agradar a todos os paladares. Mais <br>que vender sushi, queremos proporcionar momentos
+                    deliciosos e
+                    tornar <br>cada pedido uma experiência única!
+                </h4>
+            </div>
+            <div class="imagem-sobre">
+                <img src="assets/sobrenos-img1.png" alt="">
+            </div>
+        </div>
+        <div class="bloco-sobre">
+            <div class="imagem-sobre">
+                <img src="assets/sobrenos-img2.png" alt="">
+            </div>
+            <div>
+                <h4 class="texto-sobre">Nossos restaurante conta com um espaço aconchegante, moderno
+                    e <br>cuidadosamente preparado para proporcionar conforto e bem-estar
+                    aos <br>nossos clientes. Pensamos em cada detalhe para criar um
+                    ambiente <br>agradável, perfeito para reunir amigos, aproveitar momentos
+                    em familia <br>ou desfrutar de uma refeição especial!
+                </h4>
+                <br>
+                <h4 class="texto-sobre">Além de oferecer um ambiente acolhedor, também contamos com o
+                    <br>serviço de delivery, levando nossos sabores até a sua casa com
+                    preticidade <br>e qualidade!
+                </h4>
+            </div>
+        </div>
+    </section>
+    <div class="titulo-secao">
+        <h2>Login</h2>
+    </div>
+    <section id="login" class="secao-login">
+        <div class="area-login">
+            <img class="logo-formulario" src="assets/logo.png" alt="">
+            <div class="caixa-login">
+                <div class="conteudo-login">
+                    <h5>Bem-vindo de volta!</h5>
+                    <h4>Faça login para continuar</h4>
+                    <div class="campo-com-icone">
+                        <img src="assets/icone-pessoa.png" alt="">
+                        <input id="loginEmail" class="campo-texto" type="email" maxlength="150" autocomplete="username" aria-label="E-mail" placeholder="E-mail" required>
+                    </div>
+                    <div>
+                        <img src="assets/icone-cadeado.png" alt="">
+                        <input id="loginSenha" class="campo-texto" type="password" maxlength="100" autocomplete="current-password" aria-label="Senha" placeholder="Senha" required>
+                        <img src="assets/icone-olhoriscado.png" alt="">
+                    </div>
+                    <div id="lembrar-me">
+                        <div><input id="lembrarLogin" class="checkbox" type="checkbox" aria-label="Lembrar-me">
+                            <h4>Lembrar-me</h4>
+                        </div>
+
+                    </div>
+                    <button id="btnEntrar" onclick="validarLogin()">Entrar ></button>
+                    <hr>
+
+                    <div class="ainda-nao">
+                        <h4>Ainda não tem uma conta?</h4>
+                        <button onclick="rolarPara('cadastro')" id="btnCadastro">
+                            <h4 class="vermelho"> Cadastre-se</h4>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="titulo-secao">
+        <h2>Carrinho</h2>
+    </div>
+    <section id="carrinho" class="secao-carrinho">
+        <div class="carrinho">
+            <img src="assets/icone-carrinho-vermelho.png" alt="">
+            <div id="tituloCarrinho">
+                <h5>Meu</h5>
+                <h5 class="vermelho">Carrinho</h5>
+            </div>
+            <h4>Confira seus itens antes de finalizar</h4>
+            <ul id="listaItens">
+            </ul>
+            <div class="quadro-resumo">
+                <div class="resumo-carrinho">
+                    <div class="linha-resumo">
+                        <div class="rotulo-carrinho">
+                            <img src="assets/icone-calculadora.png" alt="">
+                            <h4>Subtotal</h4>
+                        </div>
+                        <div class="valor-carrinho">
+                            <h4>R$</h4><span id="subtotal">0.00</span>
+                        </div>
+                    </div>
+                    <div class="linha-resumo">
+                        <div class="rotulo-carrinho">
+                            <img src="assets/icone-moto.png" alt="">
+                            <h4>Entrega</h4>
+                        </div>
+                        <div class="valor-carrinho">
+                            <h4>R$</h4><span id="taxaEntrega">10.00</span>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="linha-resumo">
+                        <h4>TOTAL</h4>
+                        <div class="valor-carrinho">
+                            <h4>R$</h4><span id="total">10.00</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <label for="enderecoEntrega">Endereço de entrega (rua, número, bairro e cidade)</label>
+            <input id="enderecoEntrega" class="campo-texto" type="text" minlength="8" maxlength="250" autocomplete="street-address">
+            <p>Pagamento combinado na entrega. Este site não cobra cartão ou Pix.</p>
+            <div class="acoes-carrinho">
+                <button onclick="rolarPara('cardapio')" id="btnContinuarComprando">Continuar Comprando</button>
+                <button id="btnFinalizarCompra" onclick="finalizarCompra()">
+                    <img src="assets/icone-cartao.png" alt="">
+                    <h4>Finalizar Compra</h4>
+                </button>
+            </div>
+        </div>
+    </section>
+    <div class="titulo-secao">
+        <h2>Cadastro</h2>
+    </div>
+    <section id="cadastro" class="secao-cadastro">
+        <div class="area-login">
+            <img class="logo-formulario" src="assets/logo.png" alt="">
+            <div class="caixa-login">
+                <div class="conteudo-login">
+                    <h5>Criar sua conta</h5>
+                    <h4>Faça seu cadastro e aproveita nossas delícias!</h4>
+                    <div class="campo-com-icone">
+                        <img src="assets/icone-pessoa.png" alt="">
+                        <input maxlength="100" autocomplete="name" aria-label="Nome completo" id="nome" class="campo-texto" type="text" placeholder="Digite seu nome completo" required>
+                    </div>
+                    <div class="campo-contato">
+                        <img src="assets/icone-carta.png" alt="">
+                        <input maxlength="150" autocomplete="email" aria-label="E-mail de cadastro" id="email" class="campo-texto" type="email" placeholder="exemplo@gmail.com" required>
+                    </div>
+                    <div class="campo-contato">
+                        <img src="assets/icone-telefone.png" alt="">
+                        <input autocomplete="tel" aria-label="Telefone com DDD" id="telefone" class="campo-texto" type="tel" placeholder="(99) 99999-9999" maxlength="15" required>
+                    </div>
+                    <div>
+                        <img src="assets/icone-cadeado.png" alt="">
+                        <input minlength="8" maxlength="100" autocomplete="new-password" aria-label="Senha de cadastro" id="senha" class="campo-texto" type="password" placeholder="Senha" required>
+                        <img src="assets/icone-olhoriscado.png" alt="">
+                    </div>
+                    <div>
+                        <img src="assets/icone-cadeado.png" alt="">
+                        <input minlength="8" maxlength="100" autocomplete="new-password" aria-label="Confirmar senha" id="confirmarSenha" class="campo-texto" type="password"
+                            placeholder="Confirmar a senha" required>
+                        <img src="assets/icone-olhoriscado.png" alt="">
+                    </div>
+                    <div id="euconcordo">
+                        <div><input id="aceitouTermos" class="checkbox" type="checkbox" aria-label="Aceito os termos" required>
+                            <h4>Eu concordo com os</h4>
+                        </div>
+                        <h4 class="vermelho">Termos de Uso</h4>
+                        <h4>e</h4>
+                        <h4 class="vermelho">Política de Privacidade</h4>
+                    </div>
+                    <button onclick="validarCadastro()" id="btnCadastrar">Cadastrar ></button>
+                    <hr>
+
+                    <div class="ainda-nao">
+                        <h4>Já tem uma conta?</h4>
+                        <button onclick="rolarPara('login')" id="btnLogin">
+                            <h4 class="vermelho"> Entrar</h4>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="titulo-secao"><h2>Meu perfil</h2></div>
+    <section id="perfil" class="area-conta">
+        <p id="situacaoConta">Faça login para acessar sua conta.</p>
+        <form id="formPerfil" hidden>
+            <p id="emailPerfil"></p>
+            <label for="perfilNome">Nome</label>
+            <input id="perfilNome" type="text" minlength="3" maxlength="100" autocomplete="name" required>
+            <label for="perfilTelefone">Telefone</label>
+            <input id="perfilTelefone" type="tel" maxlength="15" autocomplete="tel" required>
+            <label for="perfilEndereco">Endereço (rua, número, bairro e cidade)</label>
+            <input id="perfilEndereco" type="text" minlength="8" maxlength="250" autocomplete="street-address" required>
+            <button type="submit">Salvar perfil</button>
+            <button type="button" onclick="sair()">Sair da conta</button>
+        </form>
+    </section>
+    <div class="titulo-secao"><h2>Meus pedidos</h2></div>
+    <section id="pedidos" class="area-conta">
+        <button type="button" onclick="carregarPedidos()">Atualizar pedidos</button>
+        <p id="situacaoPedidos">Faça login para consultar seus pedidos.</p>
+        <div id="listaPedidos"></div>
+    </section>
+    <section class="rodape">
+        <div class="conteudo-rodape">
+            <div id="logotext">
+                <img src="assets/logo.png" alt="">
+                <h4>Sabor e tradição <br>no seu momento</h4>
+            </div>
+            <div id="navRodape">
+                <h2>Navegação</h2>
+                <ul>
+                    <li><button onclick="rolarPara('inicio')">
+                            <h4 class="vermelho">></h4> Início
+                        </button></li>
+                    <li><button onclick="rolarPara('cardapio')">
+                            <h4 class="vermelho">></h4> Cardápio
+                        </button></li>
+                    <li><button onclick="rolarPara('sobre')">
+                            <h4 class="vermelho">></h4> Sobre Nós
+                        </button></li>
+                    <li><button onclick="rolarPara('login')">
+                            <h4 class="vermelho">></h4> Login
+                        </button></li>
+                </ul>
+            </div>
+            <div id="contato">
+                <h2>Contato</h2>
+                <ul>
+                    <li><img src="assets/telefone.png" alt="">(31) 98765-4321</li>
+                    <li><img src="assets/e-mail.png" alt="">contato@oishijapo.com.br</li>
+                    <li><img src="assets/lugar-colocar.png" alt="">Rua Exemplo, 123 <br>Belo Horizonte - MG</li>
+                </ul>
+            </div>
+            <div id="siganos">
+                <h2>Siga-nos</h2>
+                <ul>
+                    <li><button><img src="assets/instagram.png" alt=""></button></li>
+                    <li><button><img src="assets/tiktok.png" alt=""></button></li>
+                    <li><button><img src="assets/whatsapp.png" alt=""></button></li>
+                </ul>
+            </div>
+        </div>
+        <hr>
+        <div id="legendaRodape">
+            <h4>@2025 Oishi Japô. Todos os direitos reservados.</h4>
+            <h4>| Política de Privacidade | Termos de Uso</h4>
+        </div>
+    </section>
+    <template id="modeloProduto">
+        <div class="produto">
+            <img src="assets/logo.png" alt="">
+            <h3 class="nome-produto"></h3>
+            <h4></h4>
+            <h3 class="preco-produto"></h3>
+            <button type="button" class="adicionar-carrinho">Adicionar ao Carrinho</button>
+        </div>
+    </template>
+    <template id="modeloItemCarrinho">
+        <li>
+            <span></span>
+            <button type="button" class="diminuir">−</button>
+            <button type="button" class="aumentar">+</button>
+        </li>
+    </template>
+    <template id="modeloPedido">
+        <article>
+            <h3></h3>
+            <p></p>
+            <button type="button">Ver itens</button><a>Baixar JSON</a>
+            <ul></ul>
+        </article>
+    </template>
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,792 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-weight: 500;
+    user-select: none;
+}
+
+body {
+    background-color: white;
+    color: black;
+}
+
+body[data-theme="dark"] {
+    background-color: black;
+    color: white;
+}
+
+header {
+    width: 100%;
+    display: flex;
+    background-color: black;
+    color: white;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    z-index: 99;
+}
+
+header ul {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+}
+
+header div {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin: 0px 10px 0px 0px;
+}
+
+.menu:hover {
+    text-decoration: underline red;
+    user-select: none;
+    cursor: pointer;
+}
+
+.secao-inicio {
+    background-image: url(assets/backgroundimage1.png);
+    background-size: cover;
+    background-position: center;
+    height: 375px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    background-repeat: no-repeat;
+    color: white;
+}
+
+.secao-inicio div {
+    margin: 10%;
+    margin-bottom: 100px;
+}
+
+.secao-inicio h1 {
+    font-size: 55px;
+    font-weight: 900;
+}
+
+.secao-inicio button {
+    width: 200px;
+    height: 30px;
+    border-radius: 20px;
+    margin: 10px;
+    background-color: red;
+    font-size: 15px;
+    color: white;
+}
+
+#chamadaInicio {
+    color: red;
+}
+
+.titulo-secao {
+    width: 100%;
+    background-color: red;
+    height: 50px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+}
+
+.lista-produtos {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 40px 0px 120px;
+    gap: 50px;
+    justify-content: center;
+}
+
+.produto {
+    padding: 52px 20px;
+    background-color: #D9D9D9;
+    border-radius: 20px;
+    width: 365px;
+    text-align: center;
+    color: black;
+}
+
+.produto h3 {
+    font-size: 24px;
+    font-weight: 500;
+    margin: 20px 0px 4px;
+}
+
+.adicionar-carrinho {
+    width: 250px;
+    height: 30px;
+    margin-top: 10px;
+    background-color: red;
+    color: white;
+    border-radius: 20px;
+}
+
+.bloco-sobre {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    margin: 10px;
+}
+
+.texto-sobre {
+    font-size: 25px;
+    text-indent: 20px;
+}
+
+.secao-login {
+    background-image: url(assets/backgroundimage2.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 1000px;
+}
+
+.area-login {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+}
+
+.caixa-login {
+    outline: 2px solid red;
+    border-radius: 30px;
+    width: 600px;
+    height: 570px;
+}
+
+.conteudo-login {
+    margin: 10px;
+}
+
+.conteudo-login h5 {
+    font-weight: bolder;
+    font-size: xx-large;
+    margin-top: 50px;
+}
+
+.campo-com-icone {
+    margin-top: 30px;
+    padding-right: 20px;
+}
+
+.campo-texto {
+    background-color: black;
+    color: white;
+    border-radius: 20px;
+    outline: 2px solid white;
+    width: 350px;
+    margin: 10px;
+}
+
+.logo-formulario {
+    width: 250px;
+    height: 250px;
+}
+
+#lembrar-me {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 170px;
+    margin: 0px 0px 15px;
+}
+
+#lembrar-me div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+hr {
+    width: 400px;
+    margin: 10px 90px;
+}
+
+#btnEntrar {
+    width: 400px;
+    height: 40px;
+    border-radius: 20px;
+    margin: 10px;
+    background-color: red;
+    font-size: 20px;
+    color: white;
+}
+
+.ainda-nao {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.vermelho {
+    color: red;
+}
+
+.carrinho {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-image: url(assets/backgroundimage2.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+    padding-bottom: 150px;
+}
+
+#tituloCarrinho {
+    display: flex;
+    gap: 10px;
+    font-size: 40px;
+}
+
+.quadro-resumo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    outline: 2px solid red;
+    border-radius: 20px;
+}
+
+.rotulo-carrinho {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.linha-resumo {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px;
+}
+
+.acoes-carrinho {
+    display: flex;
+    gap: 100px;
+    margin: 40px;
+}
+
+#btnContinuarComprando {
+    background-color: black;
+    color: white;
+    width: 200px;
+    height: 40px;
+    outline: 2px solid white;
+    border-radius: 20px;
+}
+
+#btnFinalizarCompra {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: red;
+    color: white;
+    width: 200px;
+    height: 40px;
+    outline: 2px solid white;
+    border-radius: 20px;
+    gap: 20px;
+}
+
+.secao-cadastro {
+    background-image: url(assets/backgroundimage2.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 1000px;
+}
+
+.campo-contato {
+    padding-right: 20px;
+}
+
+#euconcordo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0px 0px 15px;
+    gap: 5px;
+}
+
+#euconcordo div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+button {
+    cursor: pointer;
+    opacity: 0.7;
+}
+
+button:hover {
+    opacity: 1;
+    transition: all .3s;
+}
+
+@media (max-width: 768px) {
+    .menu {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+}
+
+#btnTema, #btnCarrinho, #btnCadastro, #btnLogin, #btnBusca {
+    background-color: black;
+    border: none;
+}
+
+#campoBusca {
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid #ffffff;
+    color: white;
+    outline: none;
+    padding: 5px 0;
+}
+
+#campoBusca::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.valor-carrinho {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.checkbox {
+    cursor: pointer;
+}
+
+.rodape {
+    background-color: black;
+    color: white;
+}
+
+.rodape hr {
+    margin-left: 1px;
+    border: none;
+    height: 2px;
+    background-color: red;
+}
+
+.conteudo-rodape {
+    display: flex;
+    justify-content: center;
+}
+
+#logotext {
+    gap: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#logotext img {
+    width: 200px;
+}
+
+#navRodape {
+    gap: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#navRodape ul {
+    list-style: none;
+    margin-right: 30px;
+}
+
+#navRodape ul button {
+    border: none;
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+#contato {
+    gap: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#contato ul {
+    list-style: none;
+}
+
+#contato ul li {
+    display: flex;
+    align-items: center;
+}
+
+#contato ul li img {
+    width: 20px;
+}
+
+#siganos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+}
+
+#siganos ul {
+    list-style: none;
+    display: flex;
+    gap: 5px;
+}
+
+#siganos ul button {
+    border: none;
+    background-color: black;
+    color: white;
+}
+
+#siganos ul button img {
+    width: 20px;
+}
+
+#legendaRodape {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 5px 20px 0px;
+}
+
+#listaItens {
+    list-style: none;
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#listaItens li {
+    margin: 5px;
+}
+
+[hidden] {
+    display: none !important;
+}
+
+section {
+    scroll-margin-top: 100px;
+}
+
+#mensagem {
+    position: fixed;
+    top: 85px;
+    left: 5%;
+    width: 90%;
+    z-index: 110;
+    padding: 14px;
+    background: #e6ffed;
+    color: #145a27;
+    border: 1px solid #198037;
+    border-radius: 8px;
+}
+
+#mensagem.erro {
+    background: #fff0ef;
+    color: #8a1010;
+    border-color: #b11;
+}
+
+.area-conta {
+    max-width: 1000px;
+    margin: auto;
+    padding: 35px 20px;
+}
+
+#formPerfil {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    max-width: 600px;
+}
+
+.area-conta input {
+    padding: 10px;
+    max-width: 100%;
+}
+
+.area-conta button, #btnCadastrar {
+    background: red;
+    color: white;
+    padding: 10px 18px;
+    border-radius: 15px;
+}
+
+#btnCadastrar {
+    width: 400px;
+    max-width: 90%;
+    font-size: 20px;
+    margin: 10px;
+}
+
+#listaPedidos article {
+    border: 1px solid #888;
+    border-radius: 12px;
+    padding: 20px;
+    margin-top: 15px;
+}
+
+#listaPedidos a {
+    color: inherit;
+    margin-left: 15px;
+}
+
+#listaPedidos ul {
+    margin: 12px 20px;
+}
+
+#listaItens li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#listaItens button {
+    padding: 5px 12px;
+}
+
+button:disabled {
+    cursor: wait;
+    opacity: .5;
+}
+
+.campo-texto {
+    padding: 8px 12px;
+}
+
+.carrinho {
+    height: auto;
+    min-height: 850px;
+    padding: 60px 15px;
+    gap: 15px;
+}
+
+.carrinho > p, .carrinho > label {
+    text-align: center;
+    max-width: 95%;
+}
+
+.produto {
+    height: auto;
+    min-height: 482px;
+}
+
+.produto > img {
+    max-width: 100%;
+    height: 150px;
+    object-fit: contain;
+}
+
+.rodape hr {
+    width: 100%;
+}
+
+.conteudo-rodape {
+    gap: 50px;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+header > img {
+    width: 90px;
+}
+
+header > ul {
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.secao-inicio {
+    padding-top: 95px;
+    min-height: 450px;
+}
+
+.secao-inicio > div {
+    margin: 25px 7%;
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-wrap: wrap;
+        padding: 8px;
+        gap: 8px;
+    }
+
+    header > img {
+        width: 55px;
+    }
+
+    header > ul {
+        flex: 1;
+        gap: 9px;
+        font-size: 14px;
+    }
+
+    header .menu {
+        width: auto;
+        display: block;
+    }
+
+    header > div {
+        justify-content: center;
+        margin: 0;
+        width: 100%;
+    }
+
+    #campoBusca {
+        max-width: 45vw;
+    }
+
+    section {
+        scroll-margin-top: 130px;
+    }
+
+    #mensagem {
+        top: 130px;
+        font-size: 14px;
+    }
+
+    .secao-inicio {
+        padding-top: 145px;
+        height: auto;
+        min-height: 500px;
+    }
+
+    .secao-inicio h1 {
+        font-size: 32px;
+    }
+
+    .secao-inicio br, .texto-sobre br {
+        display: none;
+    }
+
+    .lista-produtos {
+        margin: 25px 10px 50px;
+        gap: 25px;
+    }
+
+    .produto {
+        width: 100%;
+        max-width: 365px;
+        padding: 25px 15px;
+    }
+
+    .bloco-sobre {
+        flex-direction: column;
+        margin: 25px 15px;
+    }
+
+    .texto-sobre {
+        font-size: 19px;
+    }
+
+    .imagem-sobre img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .secao-login, .secao-cadastro {
+        height: auto;
+        padding-bottom: 50px;
+    }
+
+    .caixa-login {
+        width: calc(100% - 24px);
+        max-width: 600px;
+        height: auto;
+        min-height: 550px;
+        padding-bottom: 25px;
+    }
+
+    .conteudo-login > div {
+        max-width: 100%;
+    }
+
+    .campo-texto {
+        width: 70%;
+        margin: 8px 4px;
+    }
+
+    .conteudo-login > div > img {
+        max-width: 20px;
+    }
+
+    .campo-com-icone, .campo-contato {
+        padding-right: 0;
+    }
+
+    #btnEntrar {
+        width: 90%;
+    }
+
+    hr {
+        width: 85%;
+        margin: 15px auto;
+    }
+
+    #lembrar-me {
+        gap: 12px;
+        flex-wrap: wrap;
+    }
+
+    #euconcordo {
+        flex-wrap: wrap;
+        font-size: 13px;
+        margin: 15px 0;
+    }
+
+    .quadro-resumo {
+        width: 100%;
+        max-width: 580px;
+    }
+
+    .resumo-carrinho {
+        width: 100%;
+    }
+
+    .acoes-carrinho {
+        gap: 15px;
+        margin: 20px 0;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .conteudo-rodape {
+        gap: 30px;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #legendaRodape {
+        flex-direction: column;
+        text-align: center;
+        gap: 12px;
+    }
+}
